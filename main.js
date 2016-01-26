@@ -83,6 +83,7 @@ function Eye(game, spritesheet) {
     this.x = 500;
     this.y = Math.random() * 150;
     this.game = game;
+	this.direction = -2;
     this.ctx = game.ctx;
 }
 
@@ -93,6 +94,10 @@ Eye.prototype.draw = function () {
 
 Eye.prototype.update = function() {
     this.x += -4;
+	this.y += this.direction;
+	if(this.y.toFixed(0) % Math.random().toFixed(0) * 200 == 0) {
+		this.direction = this.direction * -1;
+	}
 	if(this.x < -50) {
 		this.removeFromWorld = true;
 	}
