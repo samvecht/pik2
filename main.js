@@ -81,7 +81,7 @@ Pikachu.prototype.update = function () {
 function Eye(game, spritesheet) {
     this.animation = new Animation(spritesheet, 0, 0, 200, 200, 0.1, 5, true, false);
     this.x = 500;
-    this.y = Math.random() * 150;
+    this.y = Math.random() * 130;
     this.game = game;
 	this.direction = -2;
     this.ctx = game.ctx;
@@ -89,7 +89,7 @@ function Eye(game, spritesheet) {
 
 Eye.prototype.draw = function () {
 //    console.log("drawing");
-    this.animation.drawFrame(this.game.clockTick, this.ctx, this.x, this.y, .5);
+    this.animation.drawFrame(this.game.clockTick, this.ctx, this.x, this.y, .6);
 }
 
 Eye.prototype.update = function() {
